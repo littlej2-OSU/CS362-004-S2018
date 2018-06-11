@@ -98,11 +98,13 @@ protected void setUp() {
             ResultPair[] part = (ResultPair[]) testObjects[testPartsIndexIndex];
             testBuffer.append(part[index].item);
             expected &= part[index].valid;
+
          }
          String url = testBuffer.toString();
          boolean result = urlVal.isValid(url);
+         System.out.println(urlVal.isValid(url) + " " + url);
          if(result == true)
-        	 System.out.println(url);
+            //System.out.println(url);
          assertEquals(url, expected, result);
          if (printStatus) {
             if (printIndex) {
